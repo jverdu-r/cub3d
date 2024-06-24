@@ -1,0 +1,64 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jverdu-r <jverdu-r@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/06/24 17:49:22 by jverdu-r          #+#    #+#             */
+/*   Updated: 2024/06/24 17:49:58 by jverdu-r         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "../inc/cub3d.h"
+
+static void	print_controls(void)
+{
+	printf(CYAN "\n");
+	printf("###### CUB3D CONTROLS ######\n");
+	printf(RESET "\n");
+	printf(CYAN "\tW" RESET ": move forward\t");
+	printf(CYAN "\tS" RESET ": move backward\n");
+	printf(CYAN "\tA" RESET ": strafe left\t");
+	printf(CYAN "\tD" RESET ": strafe right\n");
+	printf(CYAN "\t<" RESET ": rotate left\t");
+	printf(CYAN "\t>" RESET ": rotate right\n");
+	if (BONUS)
+		printf(CYAN "\tMouse" RESET ": rotate view\n");
+	printf("\n");
+}
+
+static int	parse_args(t_data *data, char **av)
+{
+	if (check_file(av[1], true) == FAILURE)
+		clean_exit(data, FAILURE);
+	parse_data(av[1], data);
+	if (get_file_data(data, data->mapinfo.file) == FAILURE)
+		return (free_data(data));
+	if (check_map_validity(data, data->map) == FAILURE)
+		return (free_data(data));
+	if (check_textures_validity(data, &data->texinfo) == FAILURE)
+		return (free_data(data));
+	init_player_direction(data);
+	if (DEBUG_MSG)
+		debug_display_data(data);
+	return (0);
+}
+
+int	main(int argc, char **argv)
+{
+	t_data	data;
+	if (argc != 2)
+		return (err_msg("Usage", ERR_USAGE, 1));
+	init_data(&data);
+	if (parse_args(&data, argv) != 0)
+		return (1);
+	init_mlx(&data);
+	init_textures(&data);
+	print_controls();
+	render_images(&data);
+	liste_for_input(&data);
+	mlx_loop_hook(data.mlx, render, &data);
+	mlx_loop(data.mlx);
+	return (0);
+}
