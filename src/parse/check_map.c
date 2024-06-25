@@ -6,7 +6,7 @@
 /*   By: jverdu-r <jverdu-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 16:13:04 by jverdu-r          #+#    #+#             */
-/*   Updated: 2024/06/25 17:13:24 by jverdu-r         ###   ########.fr       */
+/*   Updated: 2024/06/25 17:55:02 by jverdu-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ static int	check_map_elements(t_data *data, char **map_tab)
 		}
 		i++;
 	}
-	return (SUCCESSS);
+	return (SUCCESS);
 }
 
 static int	check_position_is_valid(t_data *data, char **map_tab)
