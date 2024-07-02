@@ -6,11 +6,11 @@
 /*   By: jverdu-r <jverdu-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 17:56:35 by jverdu-r          #+#    #+#             */
-/*   Updated: 2024/06/27 18:10:31 by jverdu-r         ###   ########.fr       */
+/*   Updated: 2024/07/02 13:42:29 by jverdu-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/cub3d.h"
+#include "../../inc/cub3d.h"
 
 void	init_img_clean(t_img *img)
 {

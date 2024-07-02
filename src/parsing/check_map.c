@@ -6,11 +6,11 @@
 /*   By: jverdu-r <jverdu-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 16:13:04 by jverdu-r          #+#    #+#             */
-/*   Updated: 2024/06/25 17:55:02 by jverdu-r         ###   ########.fr       */
+/*   Updated: 2024/07/02 13:43:06 by jverdu-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/cub3d.h"
+#include "../../inc/cub3d.h"
 
 static int	check_map_elements(t_data *data, char **map_tab)
 {

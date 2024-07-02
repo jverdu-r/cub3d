@@ -6,11 +6,11 @@
 /*   By: jverdu-r <jverdu-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 16:19:29 by jverdu-r          #+#    #+#             */
-/*   Updated: 2024/06/26 16:41:27 by jverdu-r         ###   ########.fr       */
+/*   Updated: 2024/07/02 13:43:19 by jverdu-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/cub3d.h"
+#include "../../inc/cub3d.h"
 
 static bool	no_digit(char *str)
 {

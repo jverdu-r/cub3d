@@ -6,11 +6,11 @@
 /*   By: jverdu-r <jverdu-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 17:16:40 by jverdu-r          #+#    #+#             */
-/*   Updated: 2024/06/26 17:44:57 by jverdu-r         ###   ########.fr       */
+/*   Updated: 2024/07/02 13:43:25 by jverdu-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/cub3d.h"
+#include "../../inc/cub3d.h"
 
 static char	*get_texture_path(char *line, int j)
 {

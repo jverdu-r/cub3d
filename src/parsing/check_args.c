@@ -6,11 +6,11 @@
 /*   By: jverdu-r <jverdu-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/24 17:48:50 by jverdu-r          #+#    #+#             */
-/*   Updated: 2024/06/24 18:33:05 by jverdu-r         ###   ########.fr       */
+/*   Updated: 2024/07/02 13:42:59 by jverdu-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/cub3d.h"
+#include "../../inc/cub3d.h"
 
 static bool	is_dir(char *arg)
 {

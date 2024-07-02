@@ -6,12 +6,11 @@
 /*   By: jverdu-r <jverdu-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 18:10:48 by jverdu-r          #+#    #+#             */
-/*   Updated: 2024/06/27 18:23:36 by jverdu-r         ###   ########.fr       */
+/*   Updated: 2024/07/02 13:42:37 by jverdu-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/cub3d.h"
-
+#include "../../inc/cub3d.h"
 void	init_img(t_data *data, t_img *image, int width, int height)
 {
 	init_img_clean(image);

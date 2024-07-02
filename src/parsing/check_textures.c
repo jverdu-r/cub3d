@@ -6,11 +6,11 @@
 /*   By: jverdu-r <jverdu-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 17:55:23 by jverdu-r          #+#    #+#             */
-/*   Updated: 2024/06/25 18:09:19 by jverdu-r         ###   ########.fr       */
+/*   Updated: 2024/07/02 13:43:09 by jverdu-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/cub3d.h"
+#include "../../inc/cub3d.h"
 
 static int	check_valig_rgb(int *rgb)
 {

@@ -6,11 +6,11 @@
 /*   By: jverdu-r <jverdu-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 18:09:58 by jverdu-r          #+#    #+#             */
-/*   Updated: 2024/06/25 18:34:05 by jverdu-r         ###   ########.fr       */
+/*   Updated: 2024/07/02 13:43:14 by jverdu-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/cub3d.h"
+#include "../../inc/cub3d.h"
 
 static int	count_map_lines(t_data *data, char **file, int i)
 {

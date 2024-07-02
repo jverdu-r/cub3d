@@ -6,11 +6,11 @@
 /*   By: jverdu-r <jverdu-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/24 18:33:50 by jverdu-r          #+#    #+#             */
-/*   Updated: 2024/06/24 18:54:24 by jverdu-r         ###   ########.fr       */
+/*   Updated: 2024/07/02 13:43:02 by jverdu-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/cub3d.h"
+#include "../../inc/cub3d.h"
 
 int	is_white_space(char c)
 {

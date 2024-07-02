@@ -6,11 +6,11 @@
 /*   By: jverdu-r <jverdu-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 18:58:51 by jverdu-r          #+#    #+#             */
-/*   Updated: 2024/06/27 19:11:22 by jverdu-r         ###   ########.fr       */
+/*   Updated: 2024/07/02 13:41:47 by jverdu-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/cub3d.h"
+#include "../../inc/cub3d.h"
 
 void	free_tab(void	**tab)
 {

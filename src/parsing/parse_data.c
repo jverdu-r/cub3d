@@ -6,11 +6,11 @@
 /*   By: jverdu-r <jverdu-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 18:13:14 by jverdu-r          #+#    #+#             */
-/*   Updated: 2024/06/26 18:51:41 by jverdu-r         ###   ########.fr       */
+/*   Updated: 2024/07/02 13:43:30 by jverdu-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/cub3d.h"
+#include "../../inc/cub3d.h"
 
 static int	get_number_of_lines(char *path)
 {
