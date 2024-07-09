@@ -6,7 +6,7 @@
 /*   By: jverdu-r <jverdu-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 18:13:14 by jverdu-r          #+#    #+#             */
-/*   Updated: 2024/07/02 13:43:30 by jverdu-r         ###   ########.fr       */
+/*   Updated: 2024/07/09 09:48:27 by jverdu-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,9 +72,15 @@ void	parse_data(char *path, t_data *data)
 	data->mapinfo.line_count = get_number_of_lines(path);
 	data->mapinfo.path = path;
 	data->mapinfo.file = ft_calloc(data->mapinfo.line_count \
-		+ 1, sizeof(char *));
-	if (!data->mapinfo.file)
-		err_msg(path, strerror(errno), errno);
+			+ 1, sizeof(char *));
+	if (!(data->mapinfo.file))
+	{
+		err_msg(NULL, ERR_MALLOC, 0);
+		return ;
+	}
+	data->mapinfo.fd = open(path, O_RDONLY);
+	if (data->mapinfo.fd < 0)
+		err_msg(path, strerror(errno), FAILURE);
 	else
 	{
 		fill_tab(row, column, i, data);

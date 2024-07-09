@@ -6,7 +6,7 @@
 /*   By: jverdu-r <jverdu-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 16:19:29 by jverdu-r          #+#    #+#             */
-/*   Updated: 2024/07/02 13:43:19 by jverdu-r         ###   ########.fr       */
+/*   Updated: 2024/07/09 09:48:03 by jverdu-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ static bool	no_digit(char *str)
 
 	i = 0;
 	found_no_digit = true;
-	while (str && str[i])
+	while (str[i])
 	{
 		if (ft_isdigit(str[i]) == 1)
-			found_no_digit == false;
+			found_no_digit = false;
 		i++;
 	}
 	return (found_no_digit);
@@ -30,10 +30,10 @@ static bool	no_digit(char *str)
 
 static int	*copy_into_rgb_array(char **rgb_to_convert, int *rgb)
 {
-	int	i;
+	int		i;
 
 	i = -1;
-	while (rgb_to_convert && rgb_to_convert[++i])
+	while (rgb_to_convert[++i])
 	{
 		rgb[i] = ft_atoi(rgb_to_convert[i]);
 		if (rgb[i] == -1 || no_digit(rgb_to_convert[i]) == true)
@@ -55,7 +55,7 @@ static int	*set_rgb_colors(char *line)
 
 	rgb_to_convert = ft_split(line, ',');
 	count = 0;
-	while (rgb_to_convert && rgb_to_convert[count])
+	while (rgb_to_convert[count])
 		count++;
 	if (count != 3)
 	{
@@ -65,8 +65,7 @@ static int	*set_rgb_colors(char *line)
 	rgb = malloc(sizeof(int) * 3);
 	if (!rgb)
 	{
-		free_tab((void **)rgb_to_convert);
-		err_msg(NULL, ERR_MALLOC, FAILURE);
+		err_msg(NULL, ERR_MALLOC, 0);
 		return (0);
 	}
 	return (copy_into_rgb_array(rgb_to_convert, rgb));
@@ -74,7 +73,7 @@ static int	*set_rgb_colors(char *line)
 
 int	fill_color_textures(t_data *data, t_texinfo *textures, char *line, int j)
 {
-	if (line && line[j + 1] && ft_isprint(line[j + 1]))
+	if (line[j + 1] && ft_isprint(line[j + 1]))
 		return (err_msg(data->mapinfo.path, ERR_FLOOR_CEILING, ERR));
 	if (!textures->ceiling && line[j] == 'C')
 	{
@@ -90,4 +89,5 @@ int	fill_color_textures(t_data *data, t_texinfo *textures, char *line, int j)
 	}
 	else
 		return (err_msg(data->mapinfo.path, ERR_FLOOR_CEILING, ERR));
+	return (SUCCESS);
 }

@@ -6,7 +6,7 @@
 /*   By: jverdu-r <jverdu-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 10:49:23 by jverdu-r          #+#    #+#             */
-/*   Updated: 2024/07/02 11:07:06 by jverdu-r         ###   ########.fr       */
+/*   Updated: 2024/07/09 09:49:58 by jverdu-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static void	set_frame_image_pixel(t_data *data, t_img *image, int x, int y)
 		set_image_pixel(image, x, y, data->texture_pixels[y][x]);
 	else if (y < data->win_height / 2)
 		set_image_pixel(image, x, y, data->texinfo.hex_ceiling);
-	else if (y > data->win_height - 1)
+	else if (y < data->win_height -1)
 		set_image_pixel(image, x, y, data->texinfo.hex_floor);
 }
 

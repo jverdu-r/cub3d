@@ -6,13 +6,12 @@
 /*   By: jverdu-r <jverdu-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 18:24:02 by jverdu-r          #+#    #+#             */
-/*   Updated: 2024/07/02 13:42:41 by jverdu-r         ###   ########.fr       */
+/*   Updated: 2024/07/09 09:44:50 by jverdu-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/cub3d.h"
 
-/*comprobar si rula con sizeof(int) si no cambiar por sizeof * buffer*/
 static int	*xpm_to_img(t_data *data, char *path)
 {
 	t_img	tmp;
@@ -21,8 +20,8 @@ static int	*xpm_to_img(t_data *data, char *path)
 	int		y;
 
 	init_texture_img(data, &tmp, path);
-	buffer = ft_calloc(1, sizeof(int) * data->texinfo.size \
-		* data->texinfo.size);
+	buffer = ft_calloc(1,
+			sizeof * buffer * data->texinfo.size * data->texinfo.size);
 	if (!buffer)
 		clean_exit(data, err_msg(NULL, ERR_MALLOC, 1));
 	y = 0;
@@ -31,7 +30,7 @@ static int	*xpm_to_img(t_data *data, char *path)
 		x = 0;
 		while (x < data->texinfo.size)
 		{
-			buffer[y - data->texinfo.size + x] \
+			buffer[y * data->texinfo.size + x]
 				= tmp.addr[y * data->texinfo.size + x];
 			++x;
 		}
@@ -41,17 +40,15 @@ static int	*xpm_to_img(t_data *data, char *path)
 	return (buffer);
 }
 
-/*comprobar si el calloc funciona con sizeof(data->textures) 
-si no cambiar por sizeof * data->textures*/
 void	init_textures(t_data *data)
 {
-	data->textures = ft_calloc(5, sizeof(data->textures));
+	data->textures = ft_calloc(5, sizeof * data->textures);
 	if (!data->textures)
 		clean_exit(data, err_msg(NULL, ERR_MALLOC, 1));
 	data->textures[NORTH] = xpm_to_img(data, data->texinfo.north);
 	data->textures[SOUTH] = xpm_to_img(data, data->texinfo.south);
-	data->textures[WEST] = xpm_to_img(data, data->texinfo.west);
 	data->textures[EAST] = xpm_to_img(data, data->texinfo.east);
+	data->textures[WEST] = xpm_to_img(data, data->texinfo.west);
 }
 
 void	init_texinfo(t_texinfo *textures)

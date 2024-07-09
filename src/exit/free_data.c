@@ -6,18 +6,18 @@
 /*   By: jverdu-r <jverdu-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 18:58:51 by jverdu-r          #+#    #+#             */
-/*   Updated: 2024/07/02 13:41:47 by jverdu-r         ###   ########.fr       */
+/*   Updated: 2024/07/09 09:43:50 by jverdu-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/cub3d.h"
 
-void	free_tab(void	**tab)
+void	free_tab(void **tab)
 {
 	size_t	i;
 
 	i = 0;
-	while (tab && tab[i])
+	while (tab[i])
 	{
 		free(tab[i]);
 		i++;
@@ -48,7 +48,7 @@ static void	free_texinfo(t_texinfo *textures)
 static void	free_map(t_data *data)
 {
 	if (data->mapinfo.fd > 0)
-		close(data->mapinf.fd);
+		close(data->mapinfo.fd);
 	if (data->mapinfo.file)
 		free_tab((void **)data->mapinfo.file);
 	if (data->map)

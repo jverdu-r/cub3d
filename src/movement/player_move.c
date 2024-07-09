@@ -6,7 +6,7 @@
 /*   By: jverdu-r <jverdu-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 12:45:50 by jverdu-r          #+#    #+#             */
-/*   Updated: 2024/07/02 12:53:20 by jverdu-r         ###   ########.fr       */
+/*   Updated: 2024/07/09 09:45:51 by jverdu-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,11 +60,11 @@ int	move_player(t_data *data)
 	if (data->player.move_y == 1)
 		moved += move_player_forward(data);
 	if (data->player.move_y == -1)
-		moved += move_player_forward(data);
-	if (data->player.move_x == 1)
-		moved += move_player_forward(data);
+		moved += move_player_backward(data);
 	if (data->player.move_x == -1)
-		moved += move_player_forward(data);
+		moved += move_player_left(data);
+	if (data->player.move_x == 1)
+		moved += move_player_right(data);
 	if (data->player.rotate != 0)
 		moved += rotate_player(data, data->player.rotate);
 	return (moved);

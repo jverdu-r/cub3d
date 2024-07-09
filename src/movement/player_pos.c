@@ -6,7 +6,7 @@
 /*   By: jverdu-r <jverdu-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 12:53:54 by jverdu-r          #+#    #+#             */
-/*   Updated: 2024/07/02 13:07:15 by jverdu-r         ###   ########.fr       */
+/*   Updated: 2024/07/09 09:46:05 by jverdu-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static bool	is_valid_pos_in_map(t_data *data, double x, double y)
 {
 	if (x < 0.25 || x >= data->mapinfo.width - 1.25)
 		return (false);
-	if (y < 0.25 || y >= data->mapinfo.height - 1.25)
+	if (y < 0.25 || y >= data->mapinfo.height -0.25)
 		return (false);
 	return (true);
 }

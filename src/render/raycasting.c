@@ -6,7 +6,7 @@
 /*   By: jverdu-r <jverdu-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 10:04:12 by jverdu-r          #+#    #+#             */
-/*   Updated: 2024/07/02 11:07:29 by jverdu-r         ###   ########.fr       */
+/*   Updated: 2024/07/09 09:49:46 by jverdu-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,15 @@ static void	init_raycasting_info(int x, t_ray *ray, t_player *player)
 	ray->deltadist_x = fabs(1 / ray->dir_x);
 	ray->deltadist_y = fabs(1 / ray->dir_y);
 }
+
+/*
+- We are doing the initial set up for the dda
+- dda algorithm will jump one square in each loop eiter in a x or y direction
+- ray->sidedist_x or y = distance from the ray start position to the
+	next x or y position
+- if x or y < 0 go the next x or y to the left
+- if x or y > 0 go the next x or y to the right
+*/
 
 static void	set_dda(t_ray *ray, t_player *player)
 {
@@ -48,9 +57,15 @@ static void	set_dda(t_ray *ray, t_player *player)
 	}
 }
 
+/*
+- We implement the DDA algorithm -> the loop will increment 1 square 
+-   until we hit a wall
+- If the sidedistx < sidedisty, x is the closest point from the ray
+*/
+
 static void	perform_dda(t_data *data, t_ray *ray)
 {
-	int hit;
+	int	hit;
 
 	hit = 0;
 	while (hit == 0)
@@ -67,8 +82,9 @@ static void	perform_dda(t_data *data, t_ray *ray)
 			ray->map_y += ray->step_y;
 			ray->side = 1;
 		}
-		if (ray->map_y < 0.25 || ray->map_x < 0.25 \
-			|| ray->map_y > data->mapinfo.height - 0.25 \
+		if (ray->map_y < 0.25
+			|| ray->map_x < 0.25
+			|| ray->map_y > data->mapinfo.height - 0.25
 			|| ray->map_x > data->mapinfo.width - 1.25)
 			break ;
 		else if (data->map[ray->map_y][ray->map_x] > '0')
@@ -79,9 +95,9 @@ static void	perform_dda(t_data *data, t_ray *ray)
 static void	calculate_line_height(t_ray *ray, t_data *data, t_player *player)
 {
 	if (ray->side == 0)
-		ray->wall_dist = ray->sidedist_x - ray->deltadist_x;
+		ray->wall_dist = (ray->sidedist_x - ray->deltadist_x);
 	else
-		ray->wall_dist = ray->sidedist_y - ray->deltadist_y;
+		ray->wall_dist = (ray->sidedist_y - ray->deltadist_y);
 	ray->line_height = (int)(data->win_height / ray->wall_dist);
 	ray->draw_start = -(ray->line_height) / 2 + data->win_height / 2;
 	if (ray->draw_start < 0)
@@ -92,7 +108,7 @@ static void	calculate_line_height(t_ray *ray, t_data *data, t_player *player)
 	if (ray->side == 0)
 		ray->wall_x = player->pos_y + ray->wall_dist * ray->dir_y;
 	else
-		ray->wall_x = player->pos_y + ray->wall_dist * ray->dir_x;
+		ray->wall_x = player->pos_x + ray->wall_dist * ray->dir_x;
 	ray->wall_x -= floor(ray->wall_x);
 }
 

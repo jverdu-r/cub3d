@@ -6,7 +6,7 @@
 /*   By: jverdu-r <jverdu-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 18:54:32 by jverdu-r          #+#    #+#             */
-/*   Updated: 2024/07/02 13:41:40 by jverdu-r         ###   ########.fr       */
+/*   Updated: 2024/07/09 09:43:36 by jverdu-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,7 @@ void	clean_exit(t_data *data, int code)
 		mlx_loop_end(data->mlx);
 		free(data->mlx);
 	}
-
-	free(data);
+	free_data(data);
 	exit(code);
 }
 

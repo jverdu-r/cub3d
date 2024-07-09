@@ -6,26 +6,19 @@
 /*   By: jverdu-r <jverdu-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/24 18:33:50 by jverdu-r          #+#    #+#             */
-/*   Updated: 2024/07/02 13:43:02 by jverdu-r         ###   ########.fr       */
+/*   Updated: 2024/07/09 09:47:02 by jverdu-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/cub3d.h"
 
-int	is_white_space(char c)
-{
-	/*chequear si hace falta comprobar el salto de linea "\n"*/
-	if (c == '\t' || c == '\n' || c == '\v' || \
-			c == '\f' || c == '\r' || c == ' ')
-		return (1);
-	return (0);
-}
-
 static int	check_top_or_bottom(char **map_tab, int i, int j)
 {
-	if (!map_tab || !map_tab[i] || map_tab[i][j])
+	if (!map_tab || !map_tab[i] || !map_tab[i][j])
 		return (FAILURE);
-	while (is_white_space(map_tab[i][j]))
+	while (map_tab[i][j] == ' ' || map_tab[i][j] == '\t'
+	|| map_tab[i][j] == '\r' || map_tab[i][j] == '\v'
+	|| map_tab[i][j] == '\f')
 		j++;
 	while (map_tab[i][j])
 	{

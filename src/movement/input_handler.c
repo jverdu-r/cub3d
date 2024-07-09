@@ -6,7 +6,7 @@
 /*   By: jverdu-r <jverdu-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 12:04:19 by jverdu-r          #+#    #+#             */
-/*   Updated: 2024/07/02 12:33:41 by jverdu-r         ###   ########.fr       */
+/*   Updated: 2024/07/09 09:45:26 by jverdu-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,12 @@ static int	key_press_handler(int key, t_data *data)
 		data->player.rotate += 1;
 	if (key == XK_w)
 		data->player.move_y = 1;
+	if (key == XK_a)
+		data->player.move_x = -1;
 	if (key == XK_s)
 		data->player.move_y = -1;
 	if (key == XK_d)
 		data->player.move_x = 1;
-	if (key == XK_a)
-		data->player.move_x = -1;
 	return (0);
 }
 
@@ -35,18 +35,18 @@ static int	key_release_handler(int key, t_data *data)
 {
 	if (key == XK_Escape)
 		quit_cub3d(data);
-	if (key == XK_Left && data->player.rotate <= 1)
-		data->player.rotate = 0;
-	if (key == XK_Right && data->player.rotate >= -1)
-		data->player.rotate = 0;
 	if (key == XK_w && data->player.move_y == 1)
 		data->player.move_y = 0;
 	if (key == XK_s && data->player.move_y == -1)
 		data->player.move_y = 0;
-	if (key == XK_d && data->player.move_x == 1)
-		data->player.move_x = 0;
 	if (key == XK_a && data->player.move_x == -1)
-		data->player.move_x = 0;
+		data->player.move_x += 1;
+	if (key == XK_d && data->player.move_x == 1)
+		data->player.move_x -= 1;
+	if (key == XK_Left && data->player.rotate <= 1)
+		data->player.rotate = 0;
+	if (key == XK_Right && data->player.rotate >= -1)
+		data->player.rotate = 0;
 	return (0);
 }
 
@@ -76,6 +76,7 @@ static int	mouse_motion_handler(int x, int y, t_data *data)
 	else if (x > old_x)
 		data->player.has_moved += rotate_player(data, 1);
 	old_x = x;
+	return (0);
 }
 
 void	listen_for_input(t_data *data)

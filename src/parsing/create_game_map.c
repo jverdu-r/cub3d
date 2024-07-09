@@ -6,7 +6,7 @@
 /*   By: jverdu-r <jverdu-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 18:09:58 by jverdu-r          #+#    #+#             */
-/*   Updated: 2024/07/02 13:43:14 by jverdu-r         ###   ########.fr       */
+/*   Updated: 2024/07/09 09:47:49 by jverdu-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,8 @@ static int	count_map_lines(t_data *data, char **file, int i)
 	while (file[i])
 	{
 		j = 0;
-		while (file[i][j] == ' ' || file[i][j] == '\t' \
-			|| file[i][j] == '\r' || file[i][j] == '\v' \
-			|| file[i][j] == '\f')
+		while (file[i][j] == ' ' || file[i][j] == '\t' || file[i][j] == '\r'
+		|| file[i][j] == '\v' || file[i][j] == '\f')
 			j++;
 		if (file[i][j] != '1')
 			break ;
@@ -35,8 +34,8 @@ static int	count_map_lines(t_data *data, char **file, int i)
 
 static int	fill_map_tab(t_mapinfo *mapinfo, char **map_tab, int index)
 {
-	int	i;
-	int	j;
+	int		i;
+	int		j;
 
 	mapinfo->width = find_biggest_len(mapinfo, index);
 	i = 0;
@@ -77,16 +76,16 @@ static void	change_space_into_wall(t_data *data)
 	int	j;
 
 	i = 0;
-	while (data->map && data->map[i])
+	while (data->map[i])
 	{
 		j = 0;
-		while (data->map[i][j] == ' ' || data->map[i][j] == '\t' \
-			|| data->map[i][j] == '\r' || data->map[i][j] == '\v' \
-			|| data->map[i][j] == '\f')
+		while (data->map[i][j] == ' ' || data->map[i][j] == '\t'
+		|| data->map[i][j] == '\r'
+		|| data->map[i][j] == '\v' || data->map[i][j] == '\f')
 			j++;
 		while (data->map[i][++j])
 		{
-			if (data->map[i][j] == ' ' \
+			if (data->map[i][j] == ' '
 				&& j != data->map[i][ft_strlen(data->map[i]) - 1])
 				data->map[i][j] = '1';
 		}
@@ -96,7 +95,7 @@ static void	change_space_into_wall(t_data *data)
 
 int	create_map(t_data *data, char **file, int i)
 {
-	if ((get_map_info(data, file, i) == FAILURE))
+	if (get_map_info(data, file, i) == FAILURE)
 		return (FAILURE);
 	change_space_into_wall(data);
 	return (SUCCESS);

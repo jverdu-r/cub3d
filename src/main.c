@@ -6,7 +6,7 @@
 /*   By: jverdu-r <jverdu-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/24 17:49:22 by jverdu-r          #+#    #+#             */
-/*   Updated: 2024/06/24 17:49:58 by jverdu-r         ###   ########.fr       */
+/*   Updated: 2024/07/09 09:51:42 by jverdu-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static void	print_controls(void)
 {
 	printf(CYAN "\n");
-	printf("###### CUB3D CONTROLS ######\n");
+	printf("CUB3D CONTROLS\n");
 	printf(RESET "\n");
 	printf(CYAN "\tW" RESET ": move forward\t");
 	printf(CYAN "\tS" RESET ": move backward\n");
@@ -45,19 +45,20 @@ static int	parse_args(t_data *data, char **av)
 	return (0);
 }
 
-int	main(int argc, char **argv)
+int	main(int ac, char **av)
 {
 	t_data	data;
-	if (argc != 2)
+
+	if (ac != 2)
 		return (err_msg("Usage", ERR_USAGE, 1));
 	init_data(&data);
-	if (parse_args(&data, argv) != 0)
+	if (parse_args(&data, av) != 0)
 		return (1);
 	init_mlx(&data);
 	init_textures(&data);
 	print_controls();
 	render_images(&data);
-	liste_for_input(&data);
+	listen_for_input(&data);
 	mlx_loop_hook(data.mlx, render, &data);
 	mlx_loop(data.mlx);
 	return (0);

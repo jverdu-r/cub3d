@@ -6,7 +6,7 @@
 /*   By: jverdu-r <jverdu-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 08:13:24 by jverdu-r          #+#    #+#             */
-/*   Updated: 2024/07/02 11:07:39 by jverdu-r         ###   ########.fr       */
+/*   Updated: 2024/07/09 09:49:16 by jverdu-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,10 @@ static void	draw_minimap_tile(t_minimap *minimap, int x, int y)
 	else if (minimap->map[y][x] == '1')
 		set_minimap_tile_pixels(minimap, x * minimap->tile_size,
 			y * minimap->tile_size, MMAP_COLOR_WALL);
-	if (minimap->map[y][x] == '0')
+	else if (minimap->map[y][x] == '0')
 		set_minimap_tile_pixels(minimap, x * minimap->tile_size,
 			y * minimap->tile_size, MMAP_COLOR_FLOOR);
-	if (minimap->map[y][x] == ' ')
+	else if (minimap->map[y][x] == ' ')
 		set_minimap_tile_pixels(minimap, x * minimap->tile_size,
 			y * minimap->tile_size, MMAP_COLOR_SPACE);
 }
@@ -52,7 +52,7 @@ static void	set_minimap_border_image_pixels(t_minimap *minimap, int color)
 	int	x;
 	int	y;
 
-	size = minimap->tile_size + MMAP_PIXEL_SIZE;
+	size = MMAP_PIXEL_SIZE + minimap->tile_size;
 	y = 0;
 	while (y < size)
 	{
@@ -78,7 +78,7 @@ static void	draw_minimap(t_minimap *minimap)
 		x = 0;
 		while (x < minimap->size)
 		{
-			if (!minimap->map[y] || !minimap->map[y][x] \
+			if (!minimap->map[y] || !minimap->map[y][x]
 				|| minimap->map[y][x] == '\0')
 				break ;
 			draw_minimap_tile(minimap, x, y);

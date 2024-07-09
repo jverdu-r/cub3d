@@ -19,7 +19,7 @@ LIBFT_NAME	= libft.a
 LIBFT		= $(LIBFT_PATH)$(LIBFT_NAME)
 
 # Sources
-SRC_PATH = ./sources/
+SRC_PATH = ./src/
 SRC		= 	main.c \
 			error.c \
 			init/init_data.c \

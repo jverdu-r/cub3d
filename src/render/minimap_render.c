@@ -6,7 +6,7 @@
 /*   By: jverdu-r <jverdu-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 08:49:13 by jverdu-r          #+#    #+#             */
-/*   Updated: 2024/07/02 11:07:25 by jverdu-r         ###   ########.fr       */
+/*   Updated: 2024/07/09 09:49:30 by jverdu-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,10 @@ static char	*add_minimap_line(t_data *d, t_minimap *m, int y)
 	x = 0;
 	while (x < m->size && x < d->mapinfo.width)
 	{
-		if (!is_valid_map_coord(y + m->offset_y, d->mapinfo.height) \
+		if (!is_valid_map_coord(y + m->offset_y, d->mapinfo.height)
 			|| !is_valid_map_coord(x + m->offset_x, d->mapinfo.width))
 			line[x] = '\0';
-		else if ((int)d->player.pos_x == (x + m->offset_x) \
+		else if ((int)d->player.pos_x == (x + m->offset_x)
 			&& (int)d->player.pos_y == (y + m->offset_y))
 			line[x] = 'P';
 		else if (d->map[y + m->offset_y][x + m->offset_x] == '1')
@@ -87,9 +87,9 @@ void	render_minimap(t_data *data)
 	minimap.view_dist = MMAP_VIEW_DIST;
 	minimap.size = (2 * minimap.view_dist) + 1;
 	minimap.tile_size = MMAP_PIXEL_SIZE / (2 * minimap.view_dist);
-	minimap.offset_x = get_map_offset(&minimap,
+	minimap.offset_x = get_mmap_offset(&minimap,
 			data->mapinfo.width, (int)data->player.pos_x);
-	minimap.offset_y = get_map_offset(&minimap,
+	minimap.offset_y = get_mmap_offset(&minimap,
 			data->mapinfo.height, (int)data->player.pos_y);
 	minimap.map = generate_minimap(data, &minimap);
 	if (!minimap.map)

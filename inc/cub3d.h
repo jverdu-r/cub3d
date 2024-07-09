@@ -6,7 +6,7 @@
 /*   By: jverdu-r <jverdu-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/24 17:50:25 by jverdu-r          #+#    #+#             */
-/*   Updated: 2024/07/02 12:19:43 by jverdu-r         ###   ########.fr       */
+/*   Updated: 2024/07/09 08:25:13 by jverdu-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@
 # include <math.h>
 # include <errno.h>
 # include "../mlx/mlx.h"
-# include "../libft/libft.h"
+# include "libft/libft.h"
 # include "structs.h"
 # include "colors.h"
 
