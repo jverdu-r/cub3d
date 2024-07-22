@@ -6,7 +6,7 @@
 /*   By: jverdu-r <jverdu-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/24 17:50:25 by jverdu-r          #+#    #+#             */
-/*   Updated: 2024/07/22 10:59:51 by jverdu-r         ###   ########.fr       */
+/*   Updated: 2024/07/22 12:03:38 by jverdu-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,8 @@
 # define WIN_WIDTH 1200
 # define WIN_HEIGHT 920
 # define TEX_SIZE 64
-# define MOVESPEED 0.0125
-# define ROTSPEED 0.015
+# define MOVESPEED 0.125
+# define ROTSPEED 0.15
 # define DIST_EDGE_MOUSE_WRAP 20
 
 # define MMAP_PIXEL_SIZE 128
