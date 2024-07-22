@@ -6,7 +6,7 @@
 /*   By: jverdu-r <jverdu-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/24 17:49:22 by jverdu-r          #+#    #+#             */
-/*   Updated: 2024/07/09 09:51:42 by jverdu-r         ###   ########.fr       */
+/*   Updated: 2024/07/22 10:25:54 by jverdu-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ int	main(int ac, char **av)
 	init_data(&data);
 	if (parse_args(&data, av) != 0)
 		return (1);
+	printf("----------------------1---------------\n");
 	init_mlx(&data);
 	init_textures(&data);
 	print_controls();

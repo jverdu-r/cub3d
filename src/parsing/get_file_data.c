@@ -6,7 +6,7 @@
 /*   By: jverdu-r <jverdu-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 17:16:40 by jverdu-r          #+#    #+#             */
-/*   Updated: 2024/07/09 12:13:01 by jverdu-r         ###   ########.fr       */
+/*   Updated: 2024/07/22 10:56:24 by jverdu-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,8 @@ static char	*get_texture_path(char *line, int j)
 
 static int	fill_direction_textures(t_texinfo *textures, char *line, int j)
 {
-	if (line[j + 3] && !ft_isprint(line[j + 3]))
+	if (line[j + 2] && ft_isprint(line[j + 2]))
 		return (ERR);
-	printf("line: '%c'\n", line[j]);
 	if (line[j] == 'N' && line[j + 1] == 'O' && !(textures->north))
 		textures->north = get_texture_path(line, j + 3);
 	else if (line[j] == 'S' && line[j + 1] == 'O' && !(textures->south))
@@ -100,7 +99,6 @@ int	get_file_data(t_data *data, char **map)
 		while (map[i][j])
 		{
 			ret = ignore_whitespaces_get_info(data, map, i, j);
-			printf("ret: %d\n", ret);
 			if (ret == BREAK)
 				break ;
 			else if (ret == FAILURE)

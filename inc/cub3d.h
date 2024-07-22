@@ -6,7 +6,7 @@
 /*   By: jverdu-r <jverdu-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/24 17:50:25 by jverdu-r          #+#    #+#             */
-/*   Updated: 2024/07/09 08:25:13 by jverdu-r         ###   ########.fr       */
+/*   Updated: 2024/07/22 10:59:51 by jverdu-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,8 @@
 #  define BONUS 1
 # endif
 
-# define WIN_WIDTH 960
-# define WIN_HEIGHT 480
+# define WIN_WIDTH 1200
+# define WIN_HEIGHT 920
 # define TEX_SIZE 64
 # define MOVESPEED 0.0125
 # define ROTSPEED 0.015

@@ -6,11 +6,11 @@
 /*   By: jverdu-r <jverdu-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/24 17:49:56 by jverdu-r          #+#    #+#             */
-/*   Updated: 2024/06/24 17:49:58 by jverdu-r         ###   ########.fr       */
+/*   Updated: 2024/07/22 10:33:44 by jverdu-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# ifndef STRUCTS_H
+#ifndef STRUCTS_H
 # define STRUCTS_H
 
 enum e_output
