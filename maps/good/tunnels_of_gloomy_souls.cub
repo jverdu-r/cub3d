@@ -1,7 +1,7 @@
-NO textures/xpm/castle/castle_N.xpm
-SO textures/xpm/castle/castle_S.xpm
-WE textures/xpm/castle/castle_W.xpm
-EA textures/xpm/castle/castle_E.xpm
+NO textures/xpm/tunnels/tunnels_N.xpm
+SO textures/xpm/tunnels/tunnels_S.xpm
+WE textures/xpm/tunnels/tunnels_W.xpm
+EA textures/xpm/tunnels/tunnels_E.xpm
 
 F 70,70,70
 C 180,180,180
