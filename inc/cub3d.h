@@ -6,7 +6,7 @@
 /*   By: jverdu-r <jverdu-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/24 17:50:25 by jverdu-r          #+#    #+#             */
-/*   Updated: 2024/07/25 12:13:32 by jverdu-r         ###   ########.fr       */
+/*   Updated: 2024/08/03 09:59:46 by jverdu-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,15 +47,15 @@
 #  define BONUS 1
 # endif
 
-# define WIN_WIDTH 1200
-# define WIN_HEIGHT 920
+# define WIN_WIDTH 2200
+# define WIN_HEIGHT 1440
 # define TEX_SIZE 64
-# define MOVESPEED 0.025
+# define MOVESPEED 0.070
 # define ROTSPEED 0.025
 # define DIST_EDGE_MOUSE_WRAP 20
 
 # define MMAP_PIXEL_SIZE 128
-# define MMAP_VIEW_DIST 4
+# define MMAP_VIEW_DIST 5
 # define MMAP_COLOR_PLAYER 0x00FF00
 # define MMAP_COLOR_WALL 0x808080
 # define MMAP_COLOR_FLOOR 0xE6E6E6

@@ -1,10 +1,10 @@
-NO textures/xpm/castle/castle_N.xpm
-SO textures/xpm/castle/castle_S.xpm
-WE textures/xpm/castle/castle_W.xpm
-EA textures/xpm/castle/castle_E.xpm
+NO textures/xpm/abadie/abadie_N.xpm
+SO textures/xpm/abadie/abadie_S.xpm
+WE textures/xpm/abadie/abadie_W.xpm
+EA textures/xpm/abadie/abadie_E.xpm
 
-F 70,70,70
-C 180,180,180
+F 71,24,19
+C 62,64,71
 
 1111111111111111111111111111
 1000011111100001000010000001
